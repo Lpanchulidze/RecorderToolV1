@@ -1,0 +1,5 @@
+driver.findElement(By.xpath("BODY/EP-ROOT[1]")).click();
+driver.findElement(By.xpath("BODY/EP-ROOT[1]")).click();
+driver.findElement(By.xpath("BODY/EP-ROOT[1]")).sendKeys("555222222");
+driver.findElement(By.xpath("BODY/EP-ROOT[1]")).sendKeys(org.openqa.selenium.Keys.ENTER);
+driver.findElement(By.xpath("BODY/EP-ROOT[1]")).click();
