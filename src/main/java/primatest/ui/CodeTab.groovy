@@ -8,7 +8,7 @@ import net.miginfocom.swing.MigLayout
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants
 import org.fife.ui.rtextarea.RTextScrollPane
-import org.openqa.selenium.*
+
 
 import javax.swing.*
 import java.awt.event.ActionEvent
@@ -47,6 +47,7 @@ class CodeTab extends JPanel{
 
 
     CodeTab(def mainWin){
+
         mainWindow = mainWin
         setLayout(new MigLayout())
         textArea = new RSyntaxTextArea(10, 275);
@@ -100,7 +101,7 @@ class CodeTab extends JPanel{
                 JScrollPane scrollPane = new JScrollPane(textField);
                 textField.setText(selectedImports)
                 msgPanel.setLayout(new MigLayout())
-                msgPanel.add(new JLabel("<html>Default Imports:<br/>import org.openqa.selenium.support.ui.*;<br/>import org.openqa.selenium.*;<br/>import static org.junit.Assert.*;</html>"),"wrap")
+                msgPanel.add(new JLabel("<html>Default Imports:<br/>import org.openqa.selenium.support.ui.*;<br/>import org.openqa.selenium.*;<br/>import static org.testng.Assert.*;</html>"),"wrap")
                 msgPanel.add(scrollPane)
 
                 //scrollPane.setPreferredSize( new Dimension( 500, 500 ) );
@@ -205,7 +206,7 @@ class CodeTab extends JPanel{
                         }
                     }
                 }
-                script = "import org.openqa.selenium.support.ui.*;import org.openqa.selenium.*;import static org.junit.Assert.*;"+imports+"\r\n"+ script
+                script = "import org.openqa.selenium.support.ui.*; import org.openqa.selenium.*; import static org.testng.Assert.*;"+imports+"\r\n"+ script
 
                 try{
                     shell.evaluate(script)
@@ -347,7 +348,7 @@ class CodeTab extends JPanel{
                     textArea.setText(textArea.getText()+"new Select(${driverName.getText()}.findElement(By.xpath(\"${parsedResponse.id}\"))).selectByVisibleText(\"${parsedResponse.data}\");\r\n")
                 }
                 else if(parsedResponse.operation == "sendEnter"){
-                    enterResponse = driverName.getText() + ".findElement(By.xpath(\"${parsedResponse.id}\")).sendKeys(org.openqa.selenium.Keys.ENTER);\r\n"
+                    enterResponse = driverName.getText() + ".findElement(By.xpath(\"${parsedResponse.id}\")).sendKeys(Keys.ENTER);\r\n"
                 }
             }
             if(enterResponse != null){

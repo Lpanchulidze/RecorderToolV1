@@ -61,7 +61,7 @@ class MainWindow extends JFrame implements WindowListener {
         }
 
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName())
-        setTitle("Looking Glass")
+        setTitle("TBC Automation Tool V1")
         setSize(800, 500)
         setLocationRelativeTo(null)
         setDefaultCloseOperation(EXIT_ON_CLOSE)
